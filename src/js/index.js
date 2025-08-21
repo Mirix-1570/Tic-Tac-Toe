@@ -1,4 +1,5 @@
 const board = document.getElementById('board');
+const btnReiniciar = document.getElementById('btnReiniciar');
 const cells = board.getElementsByClassName('cell');
 const combinacionesGanadoras = [
     // Horizontales
@@ -16,6 +17,12 @@ const combinacionesGanadoras = [
 let currentPlayer = 'X';
 let juegoActivo = true;
 
+
+function reiniciarPagina() {
+    location.reload();
+}
+
+btnReiniciar.addEventListener('click', reiniciarPagina);
 
 if (juegoActivo) {
     currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
