@@ -24,7 +24,8 @@ if (juegoActivo) {
 for (let index = 0; index < cells.length; index++) {
     
     cells[index].addEventListener("click",function () {
-        
+        if (!juegoActivo) return;
+
         if (cells[index].textContent == '') {
             if (currentPlayer === 'X'){
                 cells[index].textContent = currentPlayer
@@ -54,9 +55,10 @@ for (let index = 0; index < cells.length; index++) {
                 }
             }
         
-        revisarGanador();
+        
     }
-
+    revisarGanador();
+    
     });
     
 }
